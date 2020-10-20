@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\newcommand{\numpy}{{\tt numpy}}    % tt font for numpy
+\usepackage{stackengine}[2013-10-15]
+\newcommand\textss[1]{\stackengine{.9ex}{}{\scriptsize#1}{O}{l}{F}{F}{L}}
+\usepackage[bottom=0.8in,top=0.8in]{geometry}
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+
+\begin{document}
+
+% ========== Edit your name here
+\author{ Asst. Prof. Dr. Çiğdem Turhan\\Res. Asst. Burcu Alakuş}
+\title{HOMEWORK II\\CMPE 326 - Formal Languages \& Automata\\  Due: May 18, 2020, 23:59}
+\date{\vspace{-5ex}}
+\maketitle
+
+\medskip
+
+% ========== Begin answering questions here
+\begin{enumerate}
+
+\item (15p) Consider the Context-free grammar G defined by:\\
+\hspace*{10mm} S \rightarrow 0A1A1A1A \\
+\hspace*{10mm} A \rightarrow 0A \: | \: 1A \: | \: $ \varepsilon $ \\\\
+\hspace*{3mm} a) Describe L(G). (5p)\\
+\hspace*{3mm} b) Convert G into a Pushdown Automaton (PDA). (10p)\\
+
+\item
+(20p) Given the DFA below, covert it into the regular expression. Show your steps.\\
+\begin{tikzpicture}[shorten >=2pt,node distance=3cm,on grid,auto] 
+   \node[state,initial] (s_0)   {$s_0$}; 
+   \node[state] (s_1) [right=of s_0] {$s_1$};
+   \node[state,accepting] (s_2) [right=of s_1] {$s_2$};
+ 
+    \path[->] 
+    (s_0) edge  [bend left,below] node {a,b} (s_1)
+    (s_1) edge  node  {a,b} (s_2)
+          
+    (s_2) edge [bend left, below] node {b} (s_0) 
+          edge [loop above] node {a};
+\end{tikzpicture}
+\\
+\item
+(15p) Convert the following CFG into the Chomsky Normal Form. Show each step.\\
+\hspace*{10mm} S \rightarrow ASA \: | \:A\: |\: $ \varepsilon $ \\
+\hspace*{10mm} A \rightarrow 11 \: | \: $ \varepsilon $ \\
+\item
+(20p) Find a Context-free grammar for the following language L.\\
+\hspace*{10mm} L = \{ a\textss{n}b\textss{2m}0c\textss{m}d\textss{2n} \mid m,n  $\geq$ 0 \}\\
+\item	(20p)  For L = \{ a\textss{2m}b\textss{3m} \mid m $\geq$ 0 \}, construct a Pushdown Automaton (PDA). \\
+\item (10p) Let G be the grammar:\\
+\hspace*{10mm} S \rightarrow aS \: | \:Sb\: |\:ab\: | \:SS  \\\\
+\text{Is this grammar ambiguous or not? Explain why.}
+
+\end{enumerate}
+\end{document}
+\grid
+\grid
